@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import CoreModul from './modules/core'
+import CoreModule from './modules/core'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   modules: {
-    core: CoreModul
-  }
+    core: CoreModule
+  },
+  strict: process.env.NODE_ENV !== 'production'
 })
