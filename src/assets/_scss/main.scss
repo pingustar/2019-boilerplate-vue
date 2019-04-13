@@ -1,0 +1,11 @@
+// User variables (your own variable overrides)
+@import 'custom/variables';
+
+// Bootstrap Core
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+// BootstrapVue styles/overrides
+@import '../../../node_modules/bootstrap-vue/src/index.scss';
+
+// User styles (your own styles/overrides)
+@import 'custom/main';
