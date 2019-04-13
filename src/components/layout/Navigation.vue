@@ -1,7 +1,12 @@
 <template>
   <b-row>
     <b-col>
-      <b-navbar toggleable="lg" type="dark" variant="primary">
+      <b-navbar
+        toggleable="lg"
+        type="dark"
+        variant="primary"
+        class="rounded my-3"
+      >
         <b-navbar-brand :to="{ name: 'home' }">
           <font-awesome-icon icon="rocket" fixed-width />
           Vue Boilerplate
@@ -17,7 +22,7 @@
 
           <!-- Right aligned nav items -->
           <b-navbar-nav class="ml-auto">
-            <b-nav-item-dropdown text="Lang" right>
+            <b-nav-item-dropdown text="Language" right>
               <b-dropdown-item
                 @click="setLanguage('en')"
                 :active="language === 'en'"

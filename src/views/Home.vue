@@ -1,6 +1,12 @@
 <template>
   <div>
-    <img alt="Vue logo" src="../assets/_img/logo.png" />
+    <b-jumbotron
+      header="Bootstrap Vue"
+      lead="Bootstrap 4 Components for Vue.js 2"
+    >
+      <p>For more information visit website</p>
+      <b-button variant="primary" href="#">More Info</b-button>
+    </b-jumbotron>
     <HelloWorld :msg="$t('welcome')" />
   </div>
 </template>
