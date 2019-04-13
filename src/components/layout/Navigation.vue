@@ -3,6 +3,7 @@
     <b-col>
       <b-navbar toggleable="lg" type="dark" variant="primary">
         <b-navbar-brand :to="{ name: 'home' }">
+          <font-awesome-icon icon="rocket" fixed-width />
           Vue Boilerplate
         </b-navbar-brand>
 
@@ -10,8 +11,8 @@
 
         <b-collapse id="nav-collapse" is-nav>
           <b-navbar-nav>
-            <b-nav-item :to="{ name: 'home' }">Home</b-nav-item>
-            <b-nav-item :to="{ name: 'about' }">About</b-nav-item>
+            <b-nav-item :to="{ name: 'home' }" exact>Home</b-nav-item>
+            <b-nav-item :to="{ name: 'about' }" exact>About</b-nav-item>
           </b-navbar-nav>
 
           <!-- Right aligned nav items -->

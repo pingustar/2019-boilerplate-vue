@@ -1,8 +1,8 @@
 <template>
   <b-container>
+    <navigation />
     <b-row>
       <b-col>
-        <navigation />
         <router-view />
       </b-col>
     </b-row>

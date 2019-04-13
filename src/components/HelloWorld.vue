@@ -1,5 +1,5 @@
 <template>
-  <div class="hello">
+  <div>
     <h1>{{ msg }}</h1>
     <p>
       For a guide and recipes on how to configure / customize this project,<br />
@@ -8,7 +8,7 @@
         >vue-cli documentation</a
       >.
     </p>
-    <h3>Language Switcher: {{ language }}</h3>
+    <h3>Language Switcher</h3>
     <ul>
       <li>
         <b-button @click="setLanguage('en')" :pressed="language === 'en'">
@@ -45,6 +45,14 @@
           target="_blank"
           rel="noopener"
           >eslint</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://github.com/kazupon/vue-i18n"
+          target="_blank"
+          rel="noopener"
+          >i18n</a
         >
       </li>
     </ul>
