@@ -14,18 +14,14 @@ export default class CoreModule extends VuexModule {
       this.language = i18n.locale = lang
       localStorage.setItem('language', lang)
     } else {
-      if (localStorage.getItem('language')) {
-        // @ts-ignore
-        this.language = i18n.locale = localStorage.getItem('language')
+      let userLang: string | null = localStorage.getItem('language')
+      if (userLang) {
+        this.language = i18n.locale = userLang
       } else {
         let browserLang = navigator.language.split('-')[0]
         this.language = i18n.locale = browserLang
         localStorage.setItem('language', browserLang)
       }
     }
-  }
-
-  get currentLang() {
-    return this.language
   }
 }
