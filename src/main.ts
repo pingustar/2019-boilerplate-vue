@@ -14,6 +14,15 @@ import {
   FontAwesomeLayers,
   FontAwesomeLayersText
 } from '@fortawesome/vue-fontawesome'
+import VueAnalytics from 'vue-analytics'
+
+Vue.use(VueAnalytics, {
+  id: 'UA-XXX-X',
+  router,
+  debug: {
+    sendHitTask: process.env.NODE_ENV === 'production'
+  }
+})
 
 Vue.use(BootstrapVue)
 

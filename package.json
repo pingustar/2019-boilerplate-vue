@@ -18,6 +18,7 @@
     "bootstrap-vue": "^2.0.0-rc.18",
     "core-js": "^2.6.5",
     "vue": "^2.6.6",
+    "vue-analytics": "^5.16.4",
     "vue-class-component": "^6.0.0",
     "vue-i18n": "^8.0.0",
     "vue-property-decorator": "^8.0.0",
