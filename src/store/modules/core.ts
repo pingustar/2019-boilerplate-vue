@@ -1,8 +1,15 @@
-import { Module, VuexModule, Mutation, Action } from 'vuex-module-decorators'
+import {
+  Module,
+  VuexModule,
+  Mutation,
+  Action,
+  getModule
+} from 'vuex-module-decorators'
+import store from '@/store/'
 import i18n from '@/i18n'
 
-@Module({ namespaced: true, name: 'core' })
-export default class CoreModule extends VuexModule {
+@Module({ dynamic: true, store: store, name: 'core' })
+class Core extends VuexModule {
   language: string = 'en'
 
   // Get / Set Language from Browser/LocaleStorage
@@ -25,3 +32,5 @@ export default class CoreModule extends VuexModule {
     }
   }
 }
+
+export const CoreModule = getModule(Core)

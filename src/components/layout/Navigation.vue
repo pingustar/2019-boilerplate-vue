@@ -25,12 +25,12 @@
             <b-nav-item-dropdown text="Language" right>
               <b-dropdown-item
                 @click="setLanguage('en')"
-                :active="language === 'en'"
+                :active="getLanguage() === 'en'"
                 >EN</b-dropdown-item
               >
               <b-dropdown-item
                 @click="setLanguage('de')"
-                :active="language === 'de'"
+                :active="getLanguage() === 'de'"
                 >DE</b-dropdown-item
               >
             </b-nav-item-dropdown>
@@ -43,19 +43,17 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import { mapState } from 'vuex'
+import { CoreModule } from '@/store/modules/core'
 
-@Component({
-  computed: {
-    ...mapState('core', ['language'])
-  }
-})
+@Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string
-  public language!: string // is assigned via mapState
 
+  get getLanguage() {
+    return CoreModule.language
+  }
   setLanguage(lang: string) {
-    this.$store.commit('core/setLanguage', lang)
+    CoreModule.setLanguage(lang)
   }
 }
 </script>

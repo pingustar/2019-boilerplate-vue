@@ -12,6 +12,7 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Navigation from '@/components/layout/Navigation.vue'
+import { CoreModule } from '@/store/modules/core'
 
 @Component({
   components: {
@@ -20,7 +21,7 @@ import Navigation from '@/components/layout/Navigation.vue'
 })
 export default class HelloWorld extends Vue {
   created() {
-    this.$store.commit('core/setLanguage')
+    CoreModule.setLanguage('') // this.$store.commit('core/setLanguage')
   }
 }
 </script>

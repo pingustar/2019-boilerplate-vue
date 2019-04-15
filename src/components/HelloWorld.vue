@@ -10,12 +10,12 @@
     <h3>Language Switcher</h3>
     <ul>
       <li>
-        <b-button @click="setLanguage('en')" :pressed="language === 'en'">
+        <b-button @click="setLanguage('en')" :pressed="getLanguage() === 'en'">
           English
         </b-button>
       </li>
       <li>
-        <b-btn @click="setLanguage('de')" :pressed="language === 'de'">
+        <b-btn @click="setLanguage('de')" :pressed="getLanguage() === 'de'">
           Deutsch
         </b-btn>
       </li>
@@ -71,19 +71,18 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import { mapState } from 'vuex'
+import { CoreModule } from '@/store/modules/core'
 
-@Component({
-  computed: {
-    ...mapState('core', ['language'])
-  }
-})
+@Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string
-  public language!: string // is assigned via mapState
+
+  getLanguage() {
+    return CoreModule.language
+  }
 
   setLanguage(lang: string) {
-    this.$store.commit('core/setLanguage', lang)
+    CoreModule.setLanguage(lang)
   }
 }
 </script>
