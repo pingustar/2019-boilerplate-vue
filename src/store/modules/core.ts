@@ -1,22 +1,20 @@
 import {
-  Module,
   VuexModule,
-  Mutation,
-  Action,
-  getModule
-} from 'vuex-module-decorators'
-import store from '@/store/'
+  mutation,
+  action,
+  getter,
+  Module
+} from 'vuex-class-component'
 import i18n from '@/i18n'
 
-@Module({ dynamic: true, store: store, name: 'core' })
-class Core extends VuexModule {
-  language: string = 'en'
+@Module({ namespacedPath: 'core/' })
+export class CoreModule extends VuexModule {
+  @getter language: string = 'en'
 
   // Get / Set Language from Browser/LocaleStorage
   // or
   // Set Language from user input
-  @Mutation
-  setLanguage(lang: string) {
+  @mutation setLanguage(lang?: string) {
     if (lang) {
       this.language = i18n.locale = lang
       localStorage.setItem('language', lang)
@@ -32,5 +30,4 @@ class Core extends VuexModule {
     }
   }
 }
-
-export const CoreModule = getModule(Core)
+export const core = CoreModule.ExtractVuexModule(CoreModule)

@@ -12,16 +12,16 @@
 <script lang="ts">
 import { Component, Vue } from 'vue-property-decorator'
 import Navigation from '@/components/layout/Navigation.vue'
-import { CoreModule } from '@/store/modules/core'
+import { vxm } from '@/store/'
 
 @Component({
   components: {
     Navigation
   }
 })
-export default class HelloWorld extends Vue {
+export default class App extends Vue {
   created() {
-    CoreModule.setLanguage('') // this.$store.commit('core/setLanguage')
+    vxm.core.setLanguage()
   }
 }
 </script>

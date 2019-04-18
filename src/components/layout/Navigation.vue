@@ -25,12 +25,12 @@
             <b-nav-item-dropdown text="Language" right>
               <b-dropdown-item
                 @click="setLanguage('en')"
-                :active="getLanguage() === 'en'"
+                :active="getLanguage === 'en'"
                 >EN</b-dropdown-item
               >
               <b-dropdown-item
                 @click="setLanguage('de')"
-                :active="getLanguage() === 'de'"
+                :active="getLanguage === 'de'"
                 >DE</b-dropdown-item
               >
             </b-nav-item-dropdown>
@@ -43,17 +43,17 @@
 
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator'
-import { CoreModule } from '@/store/modules/core'
+import { vxm } from '@/store/'
 
 @Component
 export default class HelloWorld extends Vue {
   @Prop() private msg!: string
 
   get getLanguage() {
-    return CoreModule.language
+    return vxm.core.language
   }
   setLanguage(lang: string) {
-    CoreModule.setLanguage(lang)
+    vxm.core.setLanguage(lang)
   }
 }
 </script>
